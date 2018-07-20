@@ -131,4 +131,4 @@ AUTHENTICATION_BACKENDS= (
     'django.contrib.auth.backends.ModelBackend',
 
 )
-TIME_INPUT_FORMATS = ('%I:%M %p',)
+TIME_INPUT_FORMATS = ('%I:%M%p',)

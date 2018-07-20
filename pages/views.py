@@ -71,3 +71,10 @@ def removeReminder(request, pk):
     Reminder.delete(reminder)
 
     return redirect(reverse_lazy('pages:home'))
+
+def resetViews(request):
+    user = request.user
+    tasks = Task.objects.filter(user=request.user)
+    tasks.delete()
+
+    return redirect(reverse_lazy('pages:home'))

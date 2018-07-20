@@ -16,7 +16,6 @@ google-auth-httplib2==0.0.3
 google-auth-oauthlib==0.2.0
 httplib2==0.11.3
 idna==2.7
-misaka==2.1.0
 oauthlib==2.1.0
 Pillow==5.2.0
 pipenv==2018.7.1

@@ -8,8 +8,8 @@ class TaskForm(forms.ModelForm):
         fields = ['title', 'start', 'end']
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': "Task Name"}),
-            'start': forms.TimeInput(format="%H:%M", attrs={'size': '5', 'class':'timeinput', 'placeholder': "00:00 AM", 'pattern': '^([0-1]?[0-9]|2[0-3]):[0-5][0-9] ([AaPp][Mm])'}),
-            'end': forms.TimeInput(format="%H:%M", attrs={'size': '5', 'class':'timeinput', 'placeholder': "00:00 AM", 'pattern': '^([0-1]?[0-9]|2[0-3]):[0-5][0-9] ([AaPp][Mm])'}),
+            'start': forms.TimeInput(format="%H:%M", attrs={'size': '5', 'class':'timeinput', 'placeholder': "00:00AM", 'pattern': '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]([AaPp][Mm])'}),
+            'end': forms.TimeInput(format="%H:%M", attrs={'size': '5', 'class':'timeinput', 'placeholder': "00:00AM", 'pattern': '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]([AaPp][Mm])'}),
         }
     def clean(self):
         cleaned_data = super().clean()
