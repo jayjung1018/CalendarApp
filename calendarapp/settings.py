@@ -23,7 +23,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'ezny$+a63m5$+9y2mr_#i+@o5aza==jz$^-2w4n((xwwqic9kv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -132,3 +132,7 @@ AUTHENTICATION_BACKENDS= (
 
 )
 TIME_INPUT_FORMATS = ('%I:%M%p',)
+ALLOWED_HOSTS = ["jayjung1018.pythonanywhere.com", "127.0.0.1"]
+
+DEBUG_CALLBACK = "http://127.0.0.1:8000/authorize/oauthcallback/"
+PROD_CALLBACK = "http://jayjung1018.pythonanywhere.com/authorize/oauthcallback"

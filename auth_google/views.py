@@ -14,7 +14,7 @@ CLIENT_ID_PATH = os.path.join(settings.BASE_DIR, ('client_secret.json'))
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 flow = gFlow.Flow.from_client_secrets_file(CLIENT_ID_PATH, scopes=['https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email'])
-flow.redirect_uri = "http://127.0.0.1:8000/authorize/oauthcallback/"
+
 # Create your views here.
 class LoginView(generic.TemplateView):
     template_name = 'auth_google/login.html'
@@ -27,7 +27,12 @@ class LoginView(generic.TemplateView):
             return super(LoginView, self).dispatch(request, *args, **kwargs)
 ################Login and Registration with Google###############################
 def AuthView(request):
-    #
+
+    if (settings.DEBUG):
+        flow.redirect_uri = settings.DEBUG_CALLBACK
+    else:
+        flow.redirect_uri = settings.PROD_CALLBACK
+
     authorization_url, state = flow.authorization_url(access_type='offline', include_granted_scopes='true', prompt='consent')
     return redirect(authorization_url)
 
