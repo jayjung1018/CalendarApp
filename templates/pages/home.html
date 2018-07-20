@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+
+    {# The top part #}
+    <div class="row my-3">
+      <div class="col-8">
+        <h4>{{user.email}}</h4>
+      </div>
+      <div class="col-4 text-right">
+        <h4 id='time'>:</h4>
+      </div>
+    </div>
+
+    {# content grid #}
+    <div class="row">
+
+      <div class="col-4 text-center">
+        <h3>Your Day</h3>
+        <div id="calendar">
+        </div>
+      </div>
+
+      <div class="col-4 text-center">
+        <h3>Tasks</h3>
+        {% include "./_task_form.html" %}
+        <div class="taskList">
+          {% for task in tasks %}
+            {% include "./_task_list.html" %}
+          {% endfor %}
+        </div>
+
+      </div>
+
+      <div class="col-4 text-center">
+        <h3>Reminders</h3>
+        {% include "./_reminder_form.html" %}
+        <ul class="mt-3 text-left">
+        {% for reminder in reminders %}
+          <li>{{reminder.name}}
+          <a class="float-right btn-dumby" href={% url 'pages:removeReminder' pk=reminder.pk %}><i  class="fas fa-times-circle"></i></a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="quoteBlock mt-3 text-center">
+      <p id="qod"></p>
+      <p id="by"></p>
+    </div>
+
+  </div>
+{% endblock %}

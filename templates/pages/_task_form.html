@@ -1,0 +1,30 @@
+<form style="height:150px;" action="{% url 'pages:home' %}" method="post">
+  {{ form.non_field_errors }}
+  {% csrf_token %}
+  <div class="border border-dark taskCard position-relative h-100">
+    <button class="btn-dumby topright1" type="submit"><i class="fas fa-plus-circle"></i></button>
+
+    <div class="row align-items-center h-100">
+
+      <div class="col-8 border-right border-dark">
+        {{form.title.errors}}
+        <label for="{{form.title.id_for_label}}">Create Task:</label>
+        {{form.title}}
+      </div>
+
+      <div class="col-4 justify-content-center">
+        <div class="start">
+          {{form.start.errors}}
+          <label for="{{form.start.id_for_label}}">Start:</label>
+          {{form.start}}
+        </div>
+        <div class="end">
+          {{form.end.errors}}
+          <label for="{{form.end.id_for_label}}">End:</label>
+          {{form.end}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>

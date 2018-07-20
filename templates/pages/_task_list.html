@@ -1,0 +1,22 @@
+<div style="height:150px;">
+  <div class="border border-dark taskCard position-relative h-100">
+    <a href="{% url 'pages:delete' pk=task.pk %}" class="btn-dumby topright1" type="submit"><i class="fas fa-times-circle"></i></a>
+    <div class="row align-items-center h-100">
+
+      <div class="col-8 border-right border-dark">
+        {{task.title}}
+      </div>
+
+      <div class="col-4 justify-content-center">
+        <div class="start">
+          <label>Start:</label>
+          {{task.start|time:"h:i A"}}
+        </div>
+        <div class="end">
+          <label for="{{form.end.id_for_label}}">End:</label>
+          {{task.end|time:"h:i A"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

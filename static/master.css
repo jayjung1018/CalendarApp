@@ -1,0 +1,50 @@
+.bg {
+  background-image: url('splash.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  padding-top: 60px;
+}
+
+label {
+  margin: 0;
+  display: block;
+  border: none;
+}
+
+.timeinput{
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.topright1 {
+  position: absolute;
+  top:0;
+  right:5px;
+}
+
+
+.btn-dumby {
+  border:none;
+  background: none;
+  cursor: pointer;
+  color: black;
+  -webkit-appearance: none;
+}
+
+.taskCard {
+  margin-top: 5px;
+}
+
+button {
+  padding:0;
+}
+
+.taskList {
+  height: 550px;
+  overflow-y:auto;
+  overflow-x: hidden;
+}

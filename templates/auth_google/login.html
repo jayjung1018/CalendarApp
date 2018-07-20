@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="height:100vh;" class="d-flex bg align-items-center justify-content-center">
+  <div class="col-12 text-center">
+    <h1 class='mb-5 text-white'>Welcome! Please Login</h1>
+    <a class="btn btn-danger" href="{% url 'auth_google:authorize' %}">Login with Google</a>
+  </div>
+</div>
+
+{% endblock %}
